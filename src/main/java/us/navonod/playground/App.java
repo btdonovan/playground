@@ -3,12 +3,17 @@
  */
 package us.navonod.playground;
 
+import java.io.IOException;
+
 public class App {
     public String getGreeting() {
         return "Hello world.";
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static void main(String[] args) throws IOException {
+        String fileName = args[0];
+
+        Transposer transposer = new Transposer();
+        System.out.println(transposer.readFile(fileName));
     }
 }
